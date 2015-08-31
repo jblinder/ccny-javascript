@@ -8,7 +8,6 @@
 
 ## Assignments
 
-
 ####Git/GitHub
 For this class, we are going to be using a tool called `git`, as well as a website called `github.com` to host our assignments/projects. `git` is a version control system, which is basically a time capsule for a directory of files/folders. In `git`, the main directory that you want to keep track of is called a repository. You can use `Git` to keep track all the files in your directory, which is useful if you want to go back to previous versions, or try out a new idea without crufting up your project files.
 
