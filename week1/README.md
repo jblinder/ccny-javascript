@@ -8,7 +8,7 @@
 
 ## Assignments
 
- 1. Read Chapter 1 in "Javascript & JQuery"
+ 1. Read Chapter 1 in ["Javascript & JQuery" by Jon Duckett](http://javascriptbook.com/)
  2. Install "git" and create a github.com account (details below).
 
 ####Git/GitHub
@@ -20,12 +20,11 @@ For this class, we are going to be using a tool called `git`, as well as a websi
 
 **BEFORE STARTING: If you already have a GitHub account and have git setup on your local machine, you can skip to step 6.**
 
-2. [Create a **free** GitHub account](www.github.com)  
-3. Download the GitHub app for [Mac](https://mac.github.com/) or [Windows](https://windows.github.com/)
+1. [Create a **free** GitHub account](www.github.com)  
+2. Download the GitHub app for [Mac](https://mac.github.com/) or [Windows](https://windows.github.com/)
 3. [Follow the steps to setup Git on the computer you plan to use to submit assignments for this course. Be sure to select the environment you want to install on at the top.](https://help.github.com/articles/set-up-git#platform-mac)  
 4. [Follow the steps to create your first GitHub repository](https://help.github.com/articles/create-a-repo)
-5. [Watch "Git Real"](https://www.youtube.com/watch?v=ltzQbZrWLds)
-6. [Complete “Try Git”](https://try.github.io/)  
-7. [Create your GitHub user page](https://pages.github.com/)
-8. Please [email me](mailto:justin.blinder@gmail.com) your GitHub username.
+5. [Create your GitHub user page](https://pages.github.com/)
+6. Please [email me](mailto:justin.blinder@gmail.com) your GitHub username.
+7. **OPTIONAL** [Complete “Try Git”](https://try.github.io/)  
 
