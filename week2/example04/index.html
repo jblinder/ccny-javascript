@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Example 4 - Manipulating text</title>
+	</head>
+	<body>
+		<p id="greeting">Replace Me!</p>
+		<script>
+
+		var response = prompt("Enter a greeting");
+		var color = prompt("Enter a color");
+
+		var element = document.getElementById("greeting");
+		element.innerHTML = response;
+		element.style.color = color;
+		
+		</script>
+	</body>
+</html>
