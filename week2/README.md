@@ -102,6 +102,7 @@ After a user enters text for each prompt, their responses should show up in the 
 * Style the parts of speech differently from each other and/or the main paragraph.
 * Use an if statement to check whether the user entered any text in the prompt. If they didn't enter any text, show them the prompt again. 
 * Use an if statement to create default parts of speech if the user doesn't enter any text into a prompt.
+* Save each of the user's inputs inside an array (from this week's reading), and render the answers by accessing the corresponding elements from the array.
 
 ## 5: Uploading your code
 
