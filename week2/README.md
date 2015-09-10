@@ -50,7 +50,7 @@ Next, we'll replace certain words in the paragraph. We'll need a way to access t
 
 ```HTML
 <body>
-	<p>GitHub is how people build <span id="noun">[noun]</span>. With a community of more than 10 million <span id="pnoun">[plural noun]</span>, developers can <span id="verb"></span>, use, and contribute to over <span id="number">[number]</span> projects using a powerful collaborative development workflow.</p>
+	<p>GitHub is how people build <span id="noun">[noun]</span>. With a community of more than 10 million <span id="pnoun">[plural noun]</span>, developers can <span id="verb">[verb]</span>, use, and contribute to over <span id="number">[number]</span> projects using a powerful collaborative development workflow.</p>
 </body>
 ```
 
