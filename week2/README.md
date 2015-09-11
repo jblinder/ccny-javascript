@@ -11,7 +11,7 @@
  1. Read Chapter 2 in ["Javascript & JQuery" by Jon Duckett](http://javascriptbook.com/)
  2. Create your own Mad Lib and post it to GitHub.
  
-## DOM Examples
+## Examples (cool DOM manipulation) 
 * [Twitch by Casey Reas](http://reas.com/twitch/)
 * [E.m-bed.de/d by Yung Jake](http://e.m-bed.de/d/)
 
