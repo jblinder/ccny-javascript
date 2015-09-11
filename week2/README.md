@@ -11,6 +11,10 @@
  1. Read Chapter 2 in ["Javascript & JQuery" by Jon Duckett](http://javascriptbook.com/)
  2. Create your own Mad Lib and post it to GitHub.
  
+## DOM Examples
+* [Twitch by Casey Reas](http://reas.com/twitch/)
+* [E.m-bed.de/d by Yung Jake](http://e.m-bed.de/d/)
+
 ### Mad Lib 
 For this week's assignment we'll be making a [Mad Lib](https://en.wikipedia.org/wiki/Mad_Libs) webpage. When a user visits the webpage, they'll see a paragraph of text that has some missing words. They'll be prompted to enter a few parts of speech, and their responses will be used to fill in the missing text.
 
