@@ -102,7 +102,7 @@ This should prompt the user 4 separate times and then log out their responses. N
 
 After a user enters text for each prompt, their responses should show up in the paragraph.
 
-## 4: Extra credit
+## 4: Extra credit (complete 1 of the 4 options)
 * Style the parts of speech differently from each other and/or the main paragraph.
 * Use an if statement to check whether the user entered any text in the prompt. If they didn't enter any text, show them the prompt again. 
 * Use an if statement to create default parts of speech if the user doesn't enter any text into a prompt.
