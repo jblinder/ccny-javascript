@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Example 4 - Manipulating text</title>
+	</head>
+	<body>
+		<p id="clickme">Click Me!</p>
+		<script>
+
+		function onClick(event){
+			console.log("clicked");
+		}
+		var arr = [onClick];
+		var el = document.getElementById("clickme");
+		el.addEventListener("click", onClick);
+
+
+		</script>
+	</body>
+</html>

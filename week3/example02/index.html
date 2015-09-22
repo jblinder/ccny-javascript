@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Example 1 - Arrays</title>
+	</head>
+	<body>
+		<ul id="musicians"></ul>
+		<script>
+
+		// create the array of musicians
+		var musicians = ["drake", "grimes", "jay-z"];
+
+		// loop through each musician
+		for (var i = 0; i < musicians.length; i++) {
+			//console.log(musicians[i]);
+			var list = document.getElementById("musicians"); 			// reference the list
+			var item = document.createElement('li'); 					// create a <li> item 
+			var text = document.createTextNode(musicians[i]);
+			item.appendChild(text); 	// insert the musician name into the <li> item
+			list.appendChild(item); 									// add the <li> item to the end of list
+		}
+		</script>
+	</body>
+</html>
