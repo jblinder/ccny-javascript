@@ -1,10 +1,9 @@
 # Topic: Intro to Javascript
 ## Class
 [Lecture Files](https://github.com/jblinder/ccny-javascript/tree/master/week2)
-* Javascript syntax
-* Variables, types
+* Arrays
+* Loops
 * Functions
-* DOM (Document Object Model)
 
 ## Assignments
 
