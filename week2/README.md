@@ -11,6 +11,10 @@
  1. Read Chapter 2 in ["Javascript & JQuery" by Jon Duckett](http://javascriptbook.com/)
  2. Create your own Mad Lib and post it to GitHub.
  
+## Examples (cool DOM manipulation) 
+* [Twitch by Casey Reas](http://reas.com/twitch/)
+* [E.m-bed.de/d by Yung Jake](http://e.m-bed.de/d/)
+
 ### Mad Lib 
 For this week's assignment we'll be making a [Mad Lib](https://en.wikipedia.org/wiki/Mad_Libs) webpage. When a user visits the webpage, they'll see a paragraph of text that has some missing words. They'll be prompted to enter a few parts of speech, and their responses will be used to fill in the missing text.
 
@@ -98,7 +102,7 @@ This should prompt the user 4 separate times and then log out their responses. N
 
 After a user enters text for each prompt, their responses should show up in the paragraph.
 
-## 4: Extra credit
+## 4: Extra credit (complete 1 of the 4 options)
 * Style the parts of speech differently from each other and/or the main paragraph.
 * Use an if statement to check whether the user entered any text in the prompt. If they didn't enter any text, show them the prompt again. 
 * Use an if statement to create default parts of speech if the user doesn't enter any text into a prompt.
