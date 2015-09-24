@@ -123,10 +123,10 @@ We're also going to create a function to insert one of our answers into the HTML
 			// Access the DOM element we want to to change
 			var fortuneText = document.getElementById('answer');
 
-			if ( answer == 1 ) {
+			if ( answer == 0 ) {
 				fortuneText.innerHTML = answerOne;
 			}
-			else if ( answer == 2 ) {
+			else if ( answer == 1 ) {
 				fortuneText.innerHTML = answerTwo;
 			}			
 		}
@@ -189,7 +189,7 @@ Your HTML document will probably look something like the one below (your code wi
 
 		// Returns a number based on the number of sides
 		function getAnswerNumber(answerCount){
-			var number = getRandomInt(1,answerCount);
+			var number = getRandomInt(0,answerCount);
 			return number;
 		}
 
@@ -219,16 +219,25 @@ Your HTML document will probably look something like the one below (your code wi
 </html>
 ```
 
-## 4: Modifying the structure to use an array
+## 4: Modifying our code structure to use an array
 
-Ok, so now that we've covered arrays, the next step is to use an array for your answers instead of writing them out like:
+Now that things are functioning the way we'd like, let's refactor a bit of our code. Refactoring is just changing the structure of our code without altering how it behaves. So now that we've covered arrays, the next step is to use an array to store your answers instead of storing them as seperate variables like:
 
+```Javascript
+	var answerOne = '<img src="images/no.png"/>';
+	var answerTwo = '<img src="images/yes.png"/>';		
 ```
-		var answerOne = '<img src="images/no.png"/>';
-		var answerTwo = '<img src="images/yes.png"/>';		
-```
 
-You'll also need to modify the `displayAnswer` function to access the answers using the array's index instead of using if statements, and change the `numberOfAnswers` variable to use the array's length instead.
+For instance, your array variable might look like:
+
+```Javascript
+	var answers = ["yes", "no"];
+```
+We can also streamline the code in the `displayAnswer` function. Change the internals of this function so that it accesses the answers using your array's index instead of using if statements. 
+
+The last tweak: change the `numberOfAnswers` variable to use the array's length instead of a hard coded number. 
+
+So, what did this refactoring do? Well, now if we were to add a few more variables to the answers array, we don't have to change any other logic in our code -- it will all update automagically. Previously, we would have needed to add a new variable, for each answer, add a new if statement for each one in the `displayAnswer` function, and keep track of how many answers we have in the `numberOfAnswers` variable.`
 
 ## 5: Uploading your code
 
