@@ -249,7 +249,7 @@ could be written as
 			}
 ```
 
-However, this could be further simiplified by using the `answer` parameter passed into this function as the index number.
+However, this could be further simiplified by using the `answer` parameter passed into this function to access indecie inside the array, intead of using static numbers (i.e. ansers[0]).
 
 The last tweak: change the `numberOfAnswers` variable to use the array's length instead of a hard coded number. 
 
