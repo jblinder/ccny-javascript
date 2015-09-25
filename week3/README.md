@@ -204,10 +204,10 @@ Your HTML document will probably look something like the one below (your code wi
 			// Access the DOM element we want to to change
 			var fortuneText = document.getElementById('answer');
 
-			if ( answer == 1 ) {
+			if ( answer == 0 ) {
 				fortuneText.innerHTML = answerOne;
 			}
-			else if ( answer == 2 ) {
+			else if ( answer == 1 ) {
 				fortuneText.innerHTML = answerTwo;
 			}
 		}
@@ -233,7 +233,23 @@ For instance, your array variable might look like:
 ```Javascript
 	var answers = ["yes", "no"];
 ```
-We can also streamline the code in the `displayAnswer` function. Change the internals of this function so that it accesses the answers using your array's index instead of using if statements. 
+We can also streamline the code in the `displayAnswer` function. Change the internals of this function so that it returns  answers from your array instead of different variables using if statements. You can do this by accessing each answer by its index. For instance, if we were to keep using if statements but use an array instead of seperate variables, the following line
+
+```Javascript
+			if ( answer == 0 ) {
+				fortuneText.innerHTML = answerOne;
+			}
+```
+
+could be written as 
+
+```Javascript
+			if ( answer == 0 ) {
+				fortuneText.innerHTML = answers[0];
+			}
+```
+
+However, this could be further simiplified by using the `answer` parameter passed into this function as the index number.
 
 The last tweak: change the `numberOfAnswers` variable to use the array's length instead of a hard coded number. 
 
