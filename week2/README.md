@@ -1,6 +1,6 @@
 # Topic: Intro to Javascript
 ## Class
-[Lecture Files](https://github.com/jblinder/ccny-javascript/tree/master/week2)
+[Lecture Files](https://drive.google.com/file/d/0B-UXkFOWM2jtWGdReEZsblJJVUE/view?usp=sharing)
 * Javascript syntax
 * Variables, types
 * Functions
