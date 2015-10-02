@@ -1,6 +1,6 @@
 # Topic: Intro to Javascript
 ## Class
-[Lecture Files](https://drive.google.com/file/d/0B-UXkFOWM2jtb0kwbHdURVZvWXM/view?usp=sharing)
+[Lecture Files](https://drive.google.com/file/d/0B-UXkFOWM2jtbjd3NDNMS05IWlk/view?usp=sharing)
 * Objects
 * JSON
 * Functions cont.
@@ -14,7 +14,7 @@ Assignment: Making a slideshow
 
 For the past two assignments, we wrote logic to display custom data in an interface. The code we were writing was highly tied to the interfaces we were building.
 
-However, lets say that instead of coding a fortune teller, for instance, we were building a tool that allowed users design their own fortune teller. We want users to still use our underlying logic, however they can add their own answers and design. As a first pass, we could wrap up our code in an object that another programmer could import to use the same functionality. A more general example of this might be a slideshow tool. We'll walk through building a very basic 
+However, lets say that instead of coding a fortune teller, for instance, we were building a tool that allowed users design their own fortune teller. We want users to still use our underlying logic, however they can add their own answers and design. As a first pass, we could wrap up our code in an object that another programmer could import to use the same functionality. A more general example of this might be a slideshow tool. In this example, we'll walk through building a very basic slideshow that can be reused for different projects.
 
 ## 1: Designing the object properties
 
