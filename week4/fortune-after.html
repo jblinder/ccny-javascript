@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Magic 8 Ball</title>
+<style>
+#eight-ball{
+    width:500px;
+    margin: 0 auto;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+    <div id="eight-ball">
+        <button onclick="shake()">Shake</button>
+        <p id="question"></p>
+        <p id="answer"></p>
+    <div>
+<script>
+
+    var fortuneTeller = {
+        answers: [],
+        promptText : function(text){
+            return prompt(text);
+        },
+        getRandomAnswer: function(){
+            var max = this.answers.length;
+            var randomIndex = Math.floor(Math.random() * max);
+            return this.answers[randomIndex];
+        },
+        addAnswer: function(answer){
+            this.answers.push(answer);
+        },
+        addAnswers: function(answers){
+            this.answers = answers;
+        }
+    };
+
+    function shake(){
+        fortuneTeller.addAnswers(["yes", "maybe", "who knows"]);
+    
+        var questionText = document.getElementById('question');
+        questionText.innerHTML = fortuneTeller.promptText("Ask me a question");
+     
+        var fortuneText = document.getElementById('answer');
+        fortuneText.innerHTML = fortuneTeller.getRandomAnswer();
+
+    }
+
+</script>
+</body>
+
+</html>

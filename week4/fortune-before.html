@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Magic 8 Ball</title>
+	</head>
+
+	<body>
+		<div id="eight-ball">
+			<button class ="button" onclick="shake()">Shake</button>
+			<p id="question"></p>
+			<p id="answer"></p>
+			
+		</div>
+
+
+		<script>
+		//note all functions are within the function shake
+		    function shake(){
+		    	var question = prompt("Ask me a question");
+		    	var questionText= document.getElementById('question');
+		    	questionText.innerHTML = question;
+
+		    	var fortune = ["Yes", "No"];
+		    	
+
+		    	//Answer returned by 8Balls
+		    	var chosenAnswer = getAnswerNumber(fortune.length);
+		    	displayAnswer(chosenAnswer);
+		    	
+		    	//Returns a number based on number of answers
+		    	
+		    	function getAnswerNumber(answerCount){
+		    		var number = getRandomInt(0,answerCount);
+		    		return number;
+		    	}
+
+		    	//Returns a integer
+		   		function getRandomInt(min,max){
+		    		return Math.floor(Math.random() * (max - min)) + min;
+		   		}
+
+		   		function displayAnswer(answer){
+		    		var fortuneText = document.getElementById('answer');
+
+		    		fortuneText.innerHTML = fortune[answer];
+		    	}
+		    }
+		</script>
+	</body>
+</html>
