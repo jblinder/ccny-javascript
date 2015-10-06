@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<title>Simple to-do list</title>
+<style>
+ul {
+    list-style: none;
+    width:500px;
+}
+
+li{
+    margin:4px;
+    padding:2px;
+    background:#F9FBF4;
+}
+
+.todo{
+    color:#3EE18B;
+    border: 1px solid #EDEDED;
+}
+
+.done {
+    color:#E1626A;
+    text-decoration: line-through;
+    border: 1px dotted #FBD4D2;
+}
+
+</style>
+<script>
+// listen for the document ready event
+$(document).ready(function(){
+
+    // when page loads, add a todo class for each <li> element (instead of adding them manually in the html documetn)
+    $('li').each(function(){
+        $(this).addClass('todo');
+    });
+
+    // add a click event for each <li> element
+    $('li').click(function(){
+
+        // remove the todo class and add done
+        if ($(this).hasClass('todo') ) {      
+            $(this).removeClass('todo');
+            $(this).addClass('done');  
+
+            // animate and remove the element from the dom
+            /*
+            $(this).slideUp(5000,function(){
+                console.log("I'm done");
+                $(this).remove();
+            });
+            */
+        }
+        // remove the done class and add todo
+        else {
+            $(this).removeClass('done').addClass('todo');
+        }
+    
+    });
+
+    // reset the elements
+    $('button').on('click',function(){
+        $('li').each(function(){
+            $(this).removeClass('done')
+              .addClass('todo')
+              .show();
+        });
+    });
+
+});
+</script>
+</head>
+<body>
+    <div id="wrapper">
+        <ul>
+            <li>Study for Physics exam</li>
+            <li>Buy eggs</li>
+            <li>Read emails</li>
+            <li>Walk dog</li>
+        </ul>
+        <button>Reset</button>
+    </div>
+</body>
+</html>
