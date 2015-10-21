@@ -1,0 +1,6 @@
+{
+   		"directory": "images/",
+        "photos":["sun.jpg","earth.jpg","mars.jpg"],
+        "captions":["the sun", "the planet earth", "mars!"],
+        "currentPhoto": 0
+    }
