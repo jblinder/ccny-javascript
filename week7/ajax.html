@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<title>Dogstagram</title>
+<style>
+ul {
+    list-style: none;
+    width:500px;
+}
+
+li{
+    margin:4px;
+    padding:2px;
+    background:#F9FBF4;
+}
+
+.todo{
+    color:#3EE18B;
+    border: 1px solid #EDEDED;
+}
+
+.done {
+    color:#E1626A;
+    text-decoration: line-through;
+    border: 1px dotted #FBD4D2;
+}
+
+</style>
+<script>
+// listen for the document ready event
+$(document).ready(function(){
+	// pass in an object that setup the ajax call and handle the success/error responses
+	$.ajax({
+	    url: "https://api.instagram.com/v1/tags/dogs/media/recent?access_token=2339943.1fb234f.44384f3946ff44cb83a3068374578484",
+	    type: "GET",
+	    crossDomain: true,    // used to prevent cross domain issues
+	    dataType: 'jsonp',    // used to prevent cross domain issues
+	    success: function(response) {     
+	        // The request succeeded
+	        console.log("success");
+	        console.log(response);
+	       	// iterate over each object and create a list of every photo and user
+	        $.each(response.data, function(key,val){
+	        	console.log(val.images.standard_resolution);
+	        	var photo = val.images.standard_resolution.url;
+	        	var user  = val.user.profile_picture;
+	        	var username = val.user.username;
+	        	$('<li><img src="'+photo+'"/><img src="'+user+'"/>'+username+'</li>').appendTo('#cats');
+	        });
+	    },
+	    error: function(xhr, status) {
+	    	// The request failed
+	    	console.log("fail");
+	        console.log(status);
+	    }
+	});
+});
+
+</script>
+</head>
+<body>
+    <div id="wrapper">
+        <ul id="cats"></ul>
+    </div>
+</body>
+</html>

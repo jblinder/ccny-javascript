@@ -1,0 +1,38 @@
+{
+	"weather": [
+	{
+		"day": "Monday",
+		"temp": 100,
+		"precip" : 0.0
+	},
+	{
+		"day": "Tuesday",
+		"temp": 90,
+		"precip" : 1.0
+	},
+	{
+		"day": "Wednesday",
+		"temp": 81,
+		"precip" : 0.1
+	},
+	{
+		"day": "Thursday",
+		"temp": 80,
+		"precip" : 0.7
+	},
+	{
+		"day": "Friday",
+		"temp": 79,
+		"precip" : 0.5
+	},
+	{
+		"day": "Saturday",
+		"temp": 89,
+		"precip" : 0.3
+	},
+	{
+		"day": "Sunday",
+		"temp": 64,
+		"precip" : 0.7
+	}]
+}

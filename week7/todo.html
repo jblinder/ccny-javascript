@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<title>Simple to-do list</title>
+<style>
+ul {
+    list-style: none;
+    width:500px;
+}
+
+li{
+    margin:4px;
+    padding:2px;
+    background:#F9FBF4;
+}
+
+.todo{
+    color:#3EE18B;
+    border: 1px solid #EDEDED;
+}
+
+.done {
+    color:#E1626A;
+    text-decoration: line-through;
+    border: 1px dotted #FBD4D2;
+}
+
+</style>
+<script>
+
+// listen for the document ready event
+$(document).ready(function(){
+
+    
+    // when page loads, add a todo class for each <li> element (instead of adding them manually in the html document)
+    $('li').each(function(){
+        $(this).addClass('todo');
+        // add click events to all of the initial list items
+        addListEvents($(this));
+    });
+
+    // accepts a jQuery object and adds a click event to it
+    function addListEvents($li){
+	    // add a click event for each <li> element
+	    $li.click(function(){
+	        // remove the todo class and add done
+	        if ($(this).hasClass('todo') ) {      
+	            $(this).removeClass('todo');
+	            $(this).addClass('done');  
+
+	            // animate and remove the element from the dom
+
+	            $(this).slideUp(700,function(){
+	                console.log("I'm done");
+	                $(this).remove();
+	            });
+	            
+	        }
+	        // remove the done class and add todo
+	        else {
+	            $(this).removeClass('done').addClass('todo');
+	        }
+	    });
+	}
+   
+    // add new item
+    $('#todo-form').on('submit',function(event){
+    	// prevents the submit button from refreshing the page
+    	event.preventDefault();
+    	// create a new <li> element with the input value and add it to the list
+    	$('<li>'+ $('input:text').val() + '</li>')
+    		.addClass('todo')
+    		.appendTo('ul');
+    	// call our custom function with the newest list event to make sure it has a click event
+    	addListEvents($('li:last')); 
+    	// reset the input text
+    	$('input:text').val('');
+    });
+});
+
+</script>
+</head>
+<body>
+    <div id="wrapper">
+        <ul>
+            <li>Study for Physics exam</li>
+            <li>Buy eggs</li>
+            <li>Read emails</li>
+            <li>Walk dog</li>
+        </ul>
+        <form id="todo-form">
+        	<input type="text" id="description"/>
+        	<input type="submit" id="add" value="+"/>
+        </form>
+    </div>
+</body>
+</html>

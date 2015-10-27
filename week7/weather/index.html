@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="util.js"></script>
+<link href="css/weather.css" rel="stylesheet">
+<title>Weather</title>
+<style>
+li{
+    float:left;
+    background: #eeeeee;
+    border: 1px dotted #444444;
+    width: 6%;
+    list-style: none;
+    text-align: center;
+}
+
+</style>
+<script>
+// listen for the document ready event
+$(document).ready(function(){
+
+    // pass in an object that setup the ajax call and handle the success/error responses
+    $.ajax({
+        url: "https://api.forecast.io/forecast/a586d11648043cec0b74207005ff6a5d/37.8267,-122.423",
+        type: "GET",
+        crossDomain: true,    // used to prevent cross domain issues
+        dataType: 'jsonp',    // used to prevent cross domain issues
+        success: function(response) {     
+            // The request succeeded
+            console.log("success");
+            console.log(response);
+            parseResponse(response);
+        },
+        error: function(xhr, status) {
+            // The request failed
+            console.log("fail");
+            console.log(status);
+        }
+    });
+
+    function parseResponse(data) {
+        console.log(data);
+          // loop through each element in the JSON weather array 
+          $.each( data.daily.data, function( key, val ) {
+                //console.log(val.temp);
+                
+                // convert a value from one rage of numbers to another range -- useful for altering heights/colors/etc based on data
+                var h = convertToRange(val.apparentTemperatureMax,[30,100],[0,400]);
+
+                // create a new list element that contains data from the JSON
+                var el = $("<li><p>High: " + val.apparentTemperatureMax + "</p><p>Low: " + val.apparentTemperatureMin + "</p></li>").css({"height":h});
+                
+                // change the <li> styling based on the JSON data
+                if ( val.precipProbability > .5){
+                    el.addClass("weather rain");
+                }
+                if ( val.precipProbability == 0 ){
+                    el.append('<img src="images/sun.gif"/>');
+                }
+
+                // add the <li> element to the <ul> tag
+                $('#days').append(el);
+          });
+    }
+});
+</script>
+</head>
+<body>
+    <div id="wrapper">
+        <ul id="days"></ul>
+    </div>
+</body>
+</html>
