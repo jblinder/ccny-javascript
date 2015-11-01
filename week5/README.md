@@ -1,6 +1,6 @@
 # Topic: Intro to jQuery
 ## Class
-[Lecture Files](https://drive.google.com/file/d/0B-UXkFOWM2jtbjd3NDNMS05IWlk/view?usp=sharing)
+[Lecture Files](https://drive.google.com/file/d/0B-UXkFOWM2jtQ2FXc2h0ZUJIeTA/view?usp=sharing)
 * jQuery!
 
 ## Assignments
