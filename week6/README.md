@@ -1,6 +1,6 @@
 # Topic: jQuery Continued
 ## Class
-[Lecture Files](https://drive.google.com/file/d/0B-UXkFOWM2jtbjd3NDNMS05IWlk/view?usp=sharing)
+[Lecture Files](https://drive.google.com/file/d/0B-UXkFOWM2jtamFwbVcxN0J0Q1E/view?usp=sharing)
 * jQuery
 * DOM Manipulation
 * JSON
