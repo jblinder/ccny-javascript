@@ -20,20 +20,23 @@
     <div id="map"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
-            var map;
 
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: 40.7127,
-                    lng: -74.0059
-                },
-                zoom: 2
-            });
-        }
+    // create a global map variable
+    var map;
+
+    // initializes our map -- is called by our google maps api url
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: 40.7127,
+                lng: -74.0059
+            },
+            zoom: 2
+        });
+    }
+
     $(document).ready(function() {
         // pass in an object that setup the ajax call and handle the success/error responses
-        console.log("start");
         $.ajax({
             url: "https://api.instagram.com/v1/tags/travel/media/recent?access_token=2339943.1fb234f.44384f3946ff44cb83a3068374578484",
             type: "GET",
@@ -53,17 +56,25 @@
 
         function parseInstagramData(json) {
             console.log(json);
+            // parse each instagram object
             $.each(json.data, function(key, val) {
-            	if (!val.location)
-            		return;
+                // if the photo doesn't have a location, quit the current function
+                if (!val.location)
+                    return;
+                // access the photo content
                 var photo = val.images.standard_resolution.url;
                 var user = val.user.profile_picture;
                 var username = val.user.username;
-                var contentString = $('<li><img src="' + photo + '"/><img src="' + user + '"/>' + username + '</li>').html();
+                console.log(photo);
+                $('<img/>').attr('src',photo).appendTo("body");
+                // create a html string with the photo conntent -- will be displayed if a user clicks on a marker
+                var contentString = $('<div style="display:block"><span><img src="' + user + '"/>' + username + '</span><span><img src="' + photo + '"/></span></div>').html();
+                // create a info window (to be displayed if a user clicks on a marker)
                 var infowindow = new google.maps.InfoWindow({
                     content: contentString
                 });
 
+                // create a marker and give it a lat/lng of the photo location
                 var marker = new google.maps.Marker({
                     position: {
                         lat: val.location.latitude,
@@ -72,6 +83,8 @@
                     map: map,
                     title: val.caption.text
                 });
+                
+                // add a click our marker
                 marker.addListener('click', function() {
                     infowindow.open(map, marker);
                 });
@@ -82,4 +95,5 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyRWbbK93Bnku_ecbCQFvP5_jiSGwAJ3M&callback=initMap">
     </script>
 </body>
+
 </html>

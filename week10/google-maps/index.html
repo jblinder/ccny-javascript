@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #map {
+        height: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+    // create a global map variable
+    var map;
+
+    // initializes our map -- is called by our google maps api url
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: 40.7127,
+                lng: -74.0059
+            },
+            zoom: 14
+        });
+
+        var contentString = '<div>I am a window</div>';
+
+        // create a info window (to be displayed if a user clicks on a marker)
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        // create a marker and give it a lat/lng of the photo location
+        var marker = new google.maps.Marker({
+            position: {
+                lat: 40.7127,
+                lng: -74.0059
+            },
+            map: map,
+            title: "I am a marker"
+        });
+
+        // add a click our marker
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+
+    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyRWbbK93Bnku_ecbCQFvP5_jiSGwAJ3M&callback=initMap">
+    </script>
+</body>
+
+</html>
