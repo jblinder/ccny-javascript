@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Main</title>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'>
+    </script>
+    <style>
+    .main {
+        display: block;
+    }
+    nav{
+        padding: 5px;
+    }
+    .content{
+        display: block;
+        background: #eeeeee;
+    }
+    .page1{
+        border:2px dotted #FF0000;
+    }
+    .page2{
+        border:2px dotted #00FF00;
+    }
+    .page3{
+        border:2px dotted #0000FF;
+    }
+    .page4{
+        border:2px dotted #FFFF00;
+    }
+    .active{
+        color: #FF0000;
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+        // create an image tag and set it's source to an image online
+
+        $("<img/>").attr('src', "https://upload.wikimedia.org/wikipedia/commons/6/64/A_massive_dust_storm_blew_through_central_Asia_on_May_7,_2007.jpg")
+            .hide()                     
+            .on('load',function(){
+                // when the image is finished loading add it to the div with the "main" class and fade it in.
+                $(".loader").remove();
+                $(this).appendTo('.main').fadeIn('slow');
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <h2>Already loaded</h2>
+        <img class="loader" src="wait.gif"/>
+    </div>
+    </div>
+</body>
+
+</html>

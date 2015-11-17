@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Main</title>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'>
+    </script>
+    <style>
+    .main {
+        display: block;
+    }
+    nav{
+        padding: 5px;
+    }
+    .content{
+        display: block;
+        background: #eeeeee;
+    }
+    .page1{
+        border:2px dotted #FF0000;
+    }
+    .page2{
+        border:2px dotted #00FF00;
+    }
+    .page3{
+        border:2px dotted #0000FF;
+    }
+    .page4{
+        border:2px dotted #FFFF00;
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+        // add a click event to each button
+        $('nav > a').click(function(e){
+            // will be one of the buton ids (ie. page1, page2,etc.)
+            console.log(e);
+            e.preventDefault(); 
+
+            // we can use the button id to construct a filename for the html file you want to load
+            var page = e.target.id + ".html";
+
+            // loads the html file into the div with the ".content" class 
+            $('.content').load(page, function(){
+                // this function is called when the html page has finished loading
+                
+                // if we want to further manipulate the new content we can do it in this function
+                console.log($(this).children(":first"));
+                $(this).children(":first").prepend("<p>This is the new loaded content for "+e.target.id+"</p>");
+            });
+        });
+
+    });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <h2>My Main Page</h2>
+        <nav>
+            <a href="#" id="page1">One</a>
+            <a href="#" id="page2">Two</a>
+            <a href="#" id="page3">Three</a>
+            <a href="#" id="page4">Four</a>
+        </nav>
+        
+        <div class="content"></div>
+    </div>
+    </div>
+</body>
+
+</html>
