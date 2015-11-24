@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<title>A to-do list app</title>
+<style>
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+}
+h2 {
+    color: #;
+}
+ul {
+    list-style: none;
+    width:500px;
+}
+
+li{
+    margin:4px;
+    padding:2px;
+    background:#F9FBF4;
+}
+
+.todo{
+    color:#1AE164;
+    border: 1px solid #EDEDED;
+}
+
+.done {
+    color:#FF545B;
+    text-decoration: line-through;
+    border: 1px dotted #FBD4D2;
+}
+
+</style>
+<script>
+
+// listen for the document ready event
+$(document).ready(function(){
+
+    
+    // get all data from local storage and create the list
+    var data = JSON.parse( localStorage.getItem( 'todo' ) );
+    if (data){
+    	$.each(data,function(key, val){
+    		$('<li>'+val+'</li>').appendTo('ul');
+    	});	
+    }
+    
+    // when page loads, add a todo class for each <li> element (instead of adding them manually in the html document)
+    $('li').each(function(){
+        $(this).addClass('todo');
+        // add click events to all of the initial list items
+        addListEvents($(this));
+    });
+
+    // accepts a jQuery object and adds a click event to it
+    function addListEvents($li){
+	    // add a click event for each <li> element
+	    $li.click(function(){
+	        // remove the todo class and add done
+	        if ($(this).hasClass('todo') ) {      
+	            $(this).removeClass('todo');
+	            $(this).addClass('done');  
+
+	            // animate and remove the element from the dom
+	            console.log($(this).text());
+	            $(this).slideUp(700,function(){
+	                $(this).remove();
+	                removeItemFromStorage($(this).text());
+	            });
+	            
+	        }
+	        // remove the done class and add todo
+	        else {
+	            $(this).removeClass('done').addClass('todo');
+	        }
+	   });
+	}
+   
+    // add new item
+    $('#todo-form').on('submit',function(event){
+    	// prevents the submit button from refreshing the page
+    	event.preventDefault();
+    	// create a new <li> element with the input value and add it to the list
+    	$('<li>'+ $('input:text').val() + '</li>')
+    		.addClass('todo')
+    		.appendTo('ul');
+    	// call our custom function with the newest list event to make sure it has a click event
+    	addListEvents($('li:last')); 
+    	//
+    	updateStorage($('input:text').val());
+    	// reset the input text
+    	$('input:text').val('');
+
+    });
+
+    // remove an item from local storage
+    function removeItemFromStorage(item){
+		var todos = JSON.parse( localStorage.getItem( 'todo' ) );
+			todos = $.grep(todos, function(value) {
+			  return value != item;
+			});
+		localStorage.setItem( 'todo', JSON.stringify(todos) ); 				
+    }
+    
+    // read from the current stored array, add to it, and save it back to storage
+    function updateStorage(item) {
+        // load the current todos from localstorage and parse into a object
+    	var todos = JSON.parse( localStorage.getItem( 'todo' ) );
+        // create an empty array if we currently don't have any todo items
+        if (!todos) 
+            todos = [];
+        // add the new item to the array
+    	todos.push(item);
+        // conver the array to a string and save it to storage
+    	localStorage.setItem( 'todo', JSON.stringify(todos) );
+    }
+});
+
+</script>
+</head>
+<body>
+    <h2>Todo(s)</h2>
+    <div id="wrapper">
+        <ul>
+        </ul>
+        <form id="todo-form">
+        	<input type="text" id="description"/>
+        	<input type="submit" id="add" value="+"/>
+        </form>
+    </div>
+</body>
+</html>
