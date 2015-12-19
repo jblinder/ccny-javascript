@@ -1,0 +1,12 @@
+## Final projects
+### (Great work! :thumbsup:)
+[Aliana](http://alibrainiac92.github.io/)  
+[Gabriel](https://galvarez38.github.io/Finals2/globe.html)  
+[Garvin](https://github.com/GarvinGittens/Garvin_Finals)  
+[Gianluca](http://gianlucateti.github.io/week-13/)  
+[Jon](http://jonathanad.github.io/)  
+[Katherine A.](http://avaloskatherine.github.io/)  
+[Katherine M.](http://ktmondragon.github.io/final/)  
+[Murad](http://stmalk.github.io/final/)  
+[Rich](http://richpriordesign.github.io/)  
+[Roberto](https://github.com/rccabre)  
